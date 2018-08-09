@@ -1,0 +1,17 @@
+{
+  "name": "nodepg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -q -w ./src -e js --exec 'node src'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^17.2.0",
+    "joi": "^13.1.1"
+  }
+}
