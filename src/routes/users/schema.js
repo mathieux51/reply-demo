@@ -35,5 +35,12 @@ module.exports = {
         .integer()
         .max(150)
     }
+  },
+  deleteResource: {
+    params: {
+      id: Joi.number()
+        .integer()
+        .required()
+    }
   }
 }

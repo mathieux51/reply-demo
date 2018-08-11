@@ -43,13 +43,26 @@ const makeRoutes = config => [
     }
   },
   {
-    method: ['PUT', 'POST'],
+    method: 'PUT',
     path: `/${config.endPoint}/{id}`,
     handler: handlers.putResource(config),
     options: {
       description: `Update a ${config.labels.singular}`,
       tags: ['api'],
       validate: schema.putResource,
+      cors: {
+        origin: ['*']
+      }
+    }
+  },
+  {
+    method: 'DELETE',
+    path: `/${config.endPoint}/{id}`,
+    handler: handlers.deleteResource(config),
+    options: {
+      description: `Delete a ${config.labels.singular}`,
+      tags: ['api'],
+      validate: schema.deleteResource,
       cors: {
         origin: ['*']
       }
