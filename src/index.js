@@ -2,6 +2,7 @@ const Hapi = require("hapi")
 
 const config = require("./config")
 const api = require("./routes/api")
+const db = require("./db")
 
 async function main() {
   try {

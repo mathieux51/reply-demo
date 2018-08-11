@@ -1,11 +1,11 @@
 {
-  "name": "nodepg",
+  "name": "reply-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "A demo for reply concept",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon -q -w ./src -e js --exec 'node src'"
+    "dev": "NODE_ENV=development nodemon --inspect src/ --exec node"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +13,10 @@
   "dependencies": {
     "hapi": "^17.2.0",
     "joi": "^13.1.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "nodemon": "^1.18.3",
+    "uuid": "^3.3.2"
   }
 }

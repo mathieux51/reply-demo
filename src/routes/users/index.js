@@ -2,14 +2,12 @@ const handlers = require('../../handlers/users')
 const config = require('./config')
 const schema = require('./schema')
 
-const Joi = require('joi')
-
 const makeRoutes = config => [
   {
     method: 'GET',
     path: `/${config.endPoint}`,
-    config: {
-      handler: handlers.getCollection(config),
+    handler: handlers.getCollection(config),
+    options: {
       description: `List all ${config.labels.plural}`,
       tags: ['api'],
       validate: schema.getCollection,
@@ -21,8 +19,8 @@ const makeRoutes = config => [
   {
     method: 'GET',
     path: `/${config.endPoint}/{id}`,
-    config: {
-      handler: handlers.getResource(config),
+    handler: handlers.getResource(config),
+    options: {
       description: `Get ${config.labels.singular} by id`,
       tags: ['api'],
       validate: schema.getResource,
@@ -31,6 +29,32 @@ const makeRoutes = config => [
       }
     }
   },
+  {
+    method: 'POST',
+    path: `/${config.endPoint}`,
+    handler: handlers.postResource(config),
+    options: {
+      description: `Post ${config.labels.singular}`,
+      tags: ['api'],
+      validate: schema.postResource,
+      cors: {
+        origin: ['*']
+      }
+    }
+  },
+  {
+    method: ['PUT', 'POST'],
+    path: `/${config.endPoint}/{id}`,
+    handler: handlers.putResource(config),
+    options: {
+      description: `Update a ${config.labels.singular}`,
+      tags: ['api'],
+      validate: schema.putResource,
+      cors: {
+        origin: ['*']
+      }
+    }
+  }
 ]
 
 module.exports = makeRoutes(config)

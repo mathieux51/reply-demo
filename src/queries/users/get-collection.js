@@ -1,4 +1,3 @@
-const SQL = require('sql-template-strings')
-
-module.exports = () =>
-  SQL`select * from "user"`
+module.exports = () => []
+// module.exports = () =>
+//   SQL`select * from "user"`

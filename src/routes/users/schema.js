@@ -1,13 +1,39 @@
 const Joi = require('joi')
 
-// const id = Joi.string().length(10).required()
-
 module.exports = {
-  user: {
-    getCollection: {
+  getCollection: {},
+  getResource: {
+    params: {
+      id: Joi.number()
+        .integer()
+        .required()
+    }
+  },
+  postResource: {
+    payload: {
+      name: Joi.string()
+        .min(2)
+        .required(),
+      gender: Joi.string()
+        .min(1)
+        .required(),
+      age: Joi.number()
+        .integer()
+        .max(150)
+    }
+  },
+  putResource: {
+    params: {
+      id: Joi.number()
+        .integer()
+        .required()
     },
-    getResource: {
-      params: { id: Joi.number().integer() }
+    payload: {
+      name: Joi.string().min(2),
+      gender: Joi.string().min(1),
+      age: Joi.number()
+        .integer()
+        .max(150)
     }
   }
 }
