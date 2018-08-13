@@ -4,7 +4,7 @@
   "description": "A demo for reply concept",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "lab",
     "dev": "NODE_ENV=development nodemon --inspect src/ --exec node"
   },
   "keywords": [],
@@ -15,7 +15,9 @@
     "joi": "^13.1.1"
   },
   "devDependencies": {
+    "code": "^5.2.0",
     "eslint": "^5.3.0",
+    "lab": "^15.5.0",
     "nodemon": "^1.18.3",
     "uuid": "^3.3.2"
   }
