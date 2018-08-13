@@ -1,5 +1,5 @@
 const hapi = {
-  host: "localhost",
+  host: 'localhost',
   port: 8081
 }
 

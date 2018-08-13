@@ -10,6 +10,20 @@
 			"item": [
 				{
 					"name": "/users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "25098091-5f27-4b65-8eca-9a23c84610e0",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -28,6 +42,20 @@
 				},
 				{
 					"name": "/users/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f4496d94-a504-42ea-9691-2ac96b22bd0c",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [
@@ -55,6 +83,20 @@
 				},
 				{
 					"name": "/users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8cae914f-ab64-438c-a322-c7da1d81cf65",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -81,6 +123,20 @@
 				},
 				{
 					"name": "/users/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2e94419d-6ecd-4852-bab9-ce7e75b4a2a5",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -108,6 +164,20 @@
 				},
 				{
 					"name": "/users/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "96336ff7-ec65-4a7b-9c39-6ebc578c0321",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -131,21 +201,230 @@
 			]
 		},
 		{
-			"name": "cars",
+			"name": "demands",
 			"item": [
 				{
-					"name": "/cars",
+					"name": "/demands",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b543e79c-ce54-4ff0-8114-b6f31928450d",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{localEnpoint}}/cars",
+							"raw": "{{localEnpoint}}/demands",
 							"host": [
 								"{{localEnpoint}}"
 							],
 							"path": [
-								"cars"
+								"demands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/demands/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bd40a216-7cc4-4907-bcc8-c8b62d0cdb7b",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Juliane\",\n  \"gender\": \"F\",\n  \"age\": 26\n}"
+						},
+						"url": {
+							"raw": "{{localEnpoint}}/demands/1",
+							"host": [
+								"{{localEnpoint}}"
+							],
+							"path": [
+								"demands",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/demands",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "46985f41-1982-4512-9553-a70bb98668fa",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pickUpLocation\": 0,\n    \"dropOffLocation\": 50,\n    \"earliestPickUpTime\": \"1534159800000\",\n    \"latestDropOffTime\": \"1534167000000\"\n}\n"
+						},
+						"url": {
+							"raw": "{{localEnpoint}}/demands",
+							"host": [
+								"{{localEnpoint}}"
+							],
+							"path": [
+								"demands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/demands/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "32f83d36-b616-4246-95f7-5ec2f66c49e5",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"pickUpLocation\": 0,\n    \"dropOffLocation\": 50,\n    \"earliestPickUpTime\": \"1534159800000\",\n\t\"latestDropOffTime\": \"1534167000000\"\n}"
+						},
+						"url": {
+							"raw": "{{localEnpoint}}/demands/0",
+							"host": [
+								"{{localEnpoint}}"
+							],
+							"path": [
+								"demands",
+								"0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/demands/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "36c261b3-c74d-440b-808d-c451fbc910de",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{localEnpoint}}/demands/0",
+							"host": [
+								"{{localEnpoint}}"
+							],
+							"path": [
+								"demands",
+								"0"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cars",
+			"item": [
+				{
+					"name": "/cars",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0ffd96b4-b8ca-4323-9454-40882246fc3d",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{localEnpoint}}/demands",
+							"host": [
+								"{{localEnpoint}}"
+							],
+							"path": [
+								"demands"
 							]
 						}
 					},
@@ -153,6 +432,20 @@
 				},
 				{
 					"name": "/cars/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "51b939b7-f4d6-49d7-8198-963334f286ae",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -172,6 +465,20 @@
 				},
 				{
 					"name": "/cars",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ef1bdd43-e1ef-44c7-8ebe-d868875f709a",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -182,15 +489,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"model\": \"A3\",\n        \"engine\": \"2.0L TFSI four-cylinder engine\",\n        \"infotainmentSystem\": [\n            \"CD\",\n            \"USB\",\n            \"Bluetooth\",\n            \"video player\",\n            \"Automotive navigation system\"\n        ],\n        \"interiorDesign\": {\n            \"color\": \"chestnut brown\"\n        },\n        \"currentLocation\": 0\n}"
+							"raw": "{\n\t\"model\": \"A3\",\n    \"engine\": \"2.0L TFSI four-cylinder engine\",\n    \"infotainmentSystem\": [\n    \t\"CD\",\n        \"USB\",\n        \"Bluetooth\",\n        \"video player\",\n        \"Automotive navigation system\"\n    ],\n    \"interiorDesign\": {\n    \t\"color\": \"chestnut brown\"\n    },\n    \"currentLocation\": 0\n}"
 						},
 						"url": {
-							"raw": "{{localEnpoint}}/users",
+							"raw": "{{localEnpoint}}/cars",
 							"host": [
 								"{{localEnpoint}}"
 							],
 							"path": [
-								"users"
+								"cars"
 							]
 						}
 					},
@@ -198,6 +505,20 @@
 				},
 				{
 					"name": "/cars/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fe222f6a-d98f-4f26-bd9e-888cc6f695aa",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -208,15 +529,15 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"Juliane\",\n  \"gender\": \"F\",\n  \"age\": 26\n}"
+							"raw": "{\n\t\"model\": \"A4\",\n    \"engine\": \"2.0L TFSI four-cylinder engine\",\n    \"infotainmentSystem\": [\n    \t\"CD\",\n        \"USB\",\n        \"Bluetooth\",\n        \"video player\",\n        \"Automotive navigation system\"\n        ],\n    \"interiorDesign\": {\n        \"color\": \"chestnut brown\"\n    },\n\t\"currentLocation\": 0\n}"
 						},
 						"url": {
-							"raw": "{{localEnpoint}}/users/0",
+							"raw": "{{localEnpoint}}/cars/0",
 							"host": [
 								"{{localEnpoint}}"
 							],
 							"path": [
-								"users",
+								"cars",
 								"0"
 							]
 						}
@@ -225,6 +546,20 @@
 				},
 				{
 					"name": "/cars/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7e42b673-5012-49e4-9202-e0c16ad925d3",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});"
+								]
+							}
+						}
+					],
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -238,12 +573,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{localEnpoint}}/users/0",
+							"raw": "{{localEnpoint}}/cars/0",
 							"host": [
 								"{{localEnpoint}}"
 							],
 							"path": [
-								"users",
+								"cars",
 								"0"
 							]
 						}

@@ -39,7 +39,6 @@ module.exports = new Promise(res =>
             engine: '3.0L TFSI V6 engine',
             infotainmentSystem: [
               'CD',
-              'USB',
               'Bluetooth',
               'WiFi',
               'video player',
@@ -51,7 +50,37 @@ module.exports = new Promise(res =>
             currentLocation: 0
           }
         ],
-        demands: []
+        demands: [
+          {
+            id: 0,
+            pickUpLocation: 0,
+            dropOffLocation: 0,
+            earliestPickUpTime: String(
+              new Date('Mon, 13 August 2018 13:30:00').getTime()
+            ),
+            latestDropOffTime: String(
+              new Date('Mon, 13 August 2018 15:30:00').getTime()
+            ),
+            carFeatures: [
+              'A3',
+              '2.0L TFSI four-cylinder engine',
+              'USB',
+              'chestnut brown'
+            ]
+          },
+          {
+            id: 1,
+            pickUpLocation: 0,
+            dropOffLocation: 0,
+            earliestPickUpTime: String(
+              new Date('Mon, 12 August 2018 08:30:00').getTime()
+            ),
+            latestDropOffTime: String(
+              new Date('Mon, 12 August 2018 19:00:00').getTime()
+            ),
+            carFeatures: ['Q7', '3.0L TFSI V6 engine', 'CD', 'Pistachio beige']
+          }
+        ]
       }),
     100
   )

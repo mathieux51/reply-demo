@@ -1,16 +1,16 @@
-const Hapi = require("hapi")
+const Hapi = require('hapi')
 
-const config = require("./config")
-const api = require("./routes/api")
-const db = require("./db")
+const config = require('./config')
+const api = require('./routes/api')
+const db = require('./db')
 
 async function main() {
   try {
     const server = new Hapi.Server(config.hapi)
-    server.decorate("request", "db", db)
+    server.decorate('request', 'db', db)
 
     await server.register(api)
-    console.log(`Endoints mounted`)
+    console.log('Endoints mounted')
 
     await server.start()
     console.log(`Server running at: ${server.info.uri}`)

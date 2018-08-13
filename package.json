@@ -4,9 +4,9 @@
   "description": "A demo for reply concept",
   "main": "index.js",
   "scripts": {
-    "test": "lab",
     "dev": "NODE_ENV=development nodemon --inspect src/ --exec node",
-    "postman": "newman run docs/reply-demo.postman_collection.json --globals docs/reply-demo.postman_globals.json"
+    "test": "lab",
+    "test:postman": "newman run docs/reply-demo.postman_collection.json --globals docs/reply-demo.postman_globals.json"
   },
   "keywords": [],
   "author": "",
