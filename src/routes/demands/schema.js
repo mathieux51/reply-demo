@@ -11,6 +11,12 @@ module.exports = {
   },
   postResource: {
     payload: {
+      userId: Joi.number()
+        .integer()
+        .required(),
+      carId: Joi.number()
+        .integer()
+        .required(),
       pickUpLocation: Joi.number()
         .integer()
         .min(0)

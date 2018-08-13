@@ -302,7 +302,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"pickUpLocation\": 0,\n    \"dropOffLocation\": 50,\n    \"earliestPickUpTime\": \"1534159800000\",\n    \"latestDropOffTime\": \"1534167000000\"\n}\n"
+							"raw": "{\n\t\"userId\": 1, \n\t\"carId\": 0,\n    \"pickUpLocation\": 0,\n    \"dropOffLocation\": 50,\n    \"earliestPickUpTime\": \"1534159800000\",\n    \"latestDropOffTime\": \"1534167000000\"\n}\n"
 						},
 						"url": {
 							"raw": "{{localEnpoint}}/demands",

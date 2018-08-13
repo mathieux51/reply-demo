@@ -53,6 +53,8 @@ module.exports = new Promise(res =>
         demands: [
           {
             id: 0,
+            userId: 1,
+            carId: 0,
             pickUpLocation: 0,
             dropOffLocation: 0,
             earliestPickUpTime: String(
@@ -70,6 +72,8 @@ module.exports = new Promise(res =>
           },
           {
             id: 1,
+            userId: 1,
+            carId: 1,
             pickUpLocation: 0,
             dropOffLocation: 0,
             earliestPickUpTime: String(
