@@ -1,12 +1,12 @@
-const users = require("./users")
-// const articles = require('./articles')
+const users = require('./users')
+const cars = require('./cars')
 
 const register = function registerRoutes(server, opts) {
   server.route(users)
-  // server.route(articles)
+  server.route(cars)
 }
 
 exports.plugin = {
-  name: "api",
+  name: 'api',
   register
 }
