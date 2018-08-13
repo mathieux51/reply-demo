@@ -18,7 +18,7 @@ module.exports = new Promise(res =>
         ],
         cars: [
           {
-            id: 'a802eef6-0fb6-44f6-a587-b206dc8f8623',
+            id: 0,
             model: 'A3',
             engine: '2.0L TFSI four-cylinder engine',
             infotainmentSystem: [
@@ -34,7 +34,7 @@ module.exports = new Promise(res =>
             currentLocation: 0
           },
           {
-            id: '2f417050-d66d-4321-80d9-3645adc83dc0',
+            id: 1,
             model: 'Q7',
             engine: '3.0L TFSI V6 engine',
             infotainmentSystem: [
