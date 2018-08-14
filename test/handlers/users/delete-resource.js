@@ -4,7 +4,7 @@ const { suite, test } = (exports.lab = Lab.script())
 
 const server = require('../../../src')
 
-suite('Cannot remove a user for which at one least one booking exists', () => {
+suite('It should try to remove a user', () => {
   test('DELETE: users/1', async () => {
     const options = {
       method: 'DELETE',

@@ -43,6 +43,12 @@ module.exports = {
         .required()
     },
     payload: {
+      userId: Joi.number()
+        .integer()
+        .required(),
+      carId: Joi.number()
+        .integer()
+        .required(),
       pickUpLocation: Joi.number()
         .integer()
         .min(0)
@@ -54,6 +60,9 @@ module.exports = {
       earliestPickUpTime: Joi.string().regex(/^\d{13}$/),
       latestDropOffTime: Joi.string().regex(/^\d{13}$/),
       carFeatures: Joi.array().items(Joi.string().min(2))
+    },
+    failAction: (req, h, err) => {
+      throw err
     }
   },
   deleteResource: {
