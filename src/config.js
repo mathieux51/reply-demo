@@ -1,6 +1,6 @@
 const hapi = {
   host: 'localhost',
-  port: 8081
+  port: process.env.PORT || 8081
 }
 
 module.exports = {
