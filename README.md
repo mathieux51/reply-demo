@@ -20,11 +20,19 @@ npm run dev
 npm run test
 ```
 
+To make sure the db is always I would need to consider other cases. 
+
 # TASK 3: SCHEDULE SERVICE DESIGN AND IMPLEMENTATION
 
+Because I'm out of time to do the design and implementation, I'm only going to explain what I would do if I had more time. 
 
+First I would create a new endpoint `/schedule`. I would look for cars that have the required features. If no cars were found, I would send a response with that information. Second I would check for the desired pick-up and drop-off location. I choose a simple 1-dimensional coordinate system that goes from 0 to 100. I would choose how long it takes to go from 0 to 100. With that information, it would be possible to calculate the latest drop-off time depending on what the earliest pick-up time is. 
+
+Finally I would add tests with the two following strategies. 
 
 # TASK 4: MANAGEMENT AND SCHEDULE SERVICE TESTING
+
+
 
 ## [Lab](https://github.com/hapijs/lab)
 
