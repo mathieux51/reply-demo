@@ -5,7 +5,7 @@ module.exports = new Promise(res =>
         users: [
           {
             id: 0,
-            name: 'Mat',
+            name: 'Mathieu',
             gender: 'M',
             age: 30
           },

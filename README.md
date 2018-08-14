@@ -1,10 +1,10 @@
 # Introduction
 
-For this demo, I tried as much as possible to answer each question. My implementation is neither done nor production ready. For each task, I tried to express my thoughts and how I would solve the problem. 
+For this demo, I tried as much as possible to answer each question. My implementation is neither done nor production ready. For each task, I tried to express my thoughts and how I would solve the problem if I was facing it in a work situation. 
 
 # Task 1: database schema design
 
-To design to the database I used StarUML. The file is [here](https://raw.githubusercontent.com/mathieux51/reply-demo/master/docs/database-schema-design.mdj). I created a screenshot of what I did:
+To design to the database I used [StarUML](http://staruml.io/). The file is [here](https://raw.githubusercontent.com/mathieux51/reply-demo/master/docs/database-schema-design.mdj). I created a screenshot of what I did:
 
 <img src='https://github.com/mathieux51/reply-demo/raw/master/docs/task1.png' width='300'/>
 
@@ -35,7 +35,7 @@ To create this API, I used `hapi.js`. This framework is perfect to create APIs (
 └── utils.js
 ```
 
-Every route has three files: `config`, `index` and `schema`. The schema file contains information to validate the schema (payload and params) with [Joi](https://github.com/hapijs/joi). A [`failAction`](https://hapijs.com/tutorials/validation#user-content-responsefailaction) handler should be implement for every route that needs it because it helps the API users in case of a payload/params error. 
+To ease development, the db is held in memory and has two item for each entity. Every route has three files: `config`, `index` and `schema`. The schema file contains information to validate the schema (payload and params) with [Joi](https://github.com/hapijs/joi). A [`failAction`](https://hapijs.com/tutorials/validation#user-content-responsefailaction) handler should be implement for every route that needs it because it helps the API users in case of a payload/params error. 
 
 Every handler has 6 files:
 
