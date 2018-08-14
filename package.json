@@ -4,7 +4,7 @@
   "description": "A demo for reply concept",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development nodemon --inspect src/ --exec node",
+    "start": "NODE_ENV=development nodemon --inspect src/ --exec node",
     "test": "lab",
     "test:watch": "nodemon -w test --exec 'lab || true'",
     "test:coverage": "lab -c",
