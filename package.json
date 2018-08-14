@@ -10,22 +10,31 @@
     "test:coverage": "lab -c",
     "test:postman": "newman run docs/reply-demo.postman_collection.json --globals docs/reply-demo.postman_globals.json"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathieux51/reply-demo"
+  },
+  "keywords": [
+    "REST",
+    "Hapi",
+    "Lab",
+    "Postman"
+  ],
+  "author": "Mathieu Schmidt",
   "license": "ISC",
   "dependencies": {
     "hapi": "^17.2.0",
+    "uuid": "^3.3.2",
+    "inert": "^5.1.0",
+    "vision": "^5.3.3",
+    "hapi-swagger": "^9.1.1",
     "joi": "^13.1.1"
   },
   "devDependencies": {
     "code": "^5.2.0",
     "eslint": "^5.3.0",
-    "hapi-swagger": "^9.1.1",
-    "inert": "^5.1.0",
     "lab": "^15.5.0",
     "newman": "^4.0.2",
-    "nodemon": "^1.18.3",
-    "uuid": "^3.3.2",
-    "vision": "^5.3.3"
+    "nodemon": "^1.18.3"
   }
 }
