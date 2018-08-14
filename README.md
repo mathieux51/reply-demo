@@ -28,6 +28,10 @@ npm run test
 
 To make sure the db is always consistent, I would need to consider other cases. 
 
+## Swagger
+
+I added a swagger documentation off all the accessible endpoints. Here is [the link](https://reply-demo-iot.herokuapp.com/documentation).
+
 # TASK 3: SCHEDULE SERVICE DESIGN AND IMPLEMENTATION
 
 Because I'm out of time to do the design and implementation, I'm only going to explain what I would do if I had more time. 
