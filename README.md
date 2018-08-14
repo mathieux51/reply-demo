@@ -1,8 +1,8 @@
 # Introduction
 
-For this demo I tried as much as possible try answer each question. My implementation is not neither done nor production ready. I tried for each task to express my thoughts and how I would solve the problem. 
+For this demo I tried as much as possible to answer each question. My implementation is neither done nor production ready. I tried for each task to express my thoughts and how I would solve the problem. 
 
-# TASK 1: DATABASE SCHEMA DESIGN
+# Task 1: database schema design
 
 To design to the database I used StarUML. The file is [here](https://raw.githubusercontent.com/mathieux51/reply-demo/master/docs/database-schema-design.mdj). I created a screenshot of what I did:
 
@@ -10,7 +10,7 @@ To design to the database I used StarUML. The file is [here](https://raw.githubu
 
 As we can see, there is tree entities: `user`, `car` and `demand`. The entity `schedule` could be added. 
 
-# TASK 2: MANAGEMENT SERVICE DESIGN AND IMPLEMENTATION
+# Task 2: management service design and implementation
 
 To create this API, I used `hapi.js`. This framework is perfect to create APIs (HttpAPI). 
 
@@ -21,9 +21,7 @@ To install the dependencies and start the server:
 ```bash
 npm install
 # Start dev server
-npm run dev
-# Test
-npm run test
+npm start
 ```
 
 To make sure the db is always consistent, I would need to consider other cases. 
@@ -32,17 +30,15 @@ To make sure the db is always consistent, I would need to consider other cases.
 
 I added a swagger documentation off all the accessible endpoints. Here is [the link](https://reply-demo-iot.herokuapp.com/documentation).
 
-# TASK 3: SCHEDULE SERVICE DESIGN AND IMPLEMENTATION
+# Task 3: Schedule service design and implementation
 
-Because I'm out of time to do the design and implementation, I'm only going to explain what I would do if I had more time. 
+Because I'm out of time to do the design and implementation of the schedule service, I'm going to explain what I would do if I had more time to do the implementation. 
 
-First I would create a new endpoint `/schedule`. I would look for cars that have the required features. If no cars were found, I would send a response with that information. Second I would check for the desired pick-up and drop-off location. I choose a simple 1-dimensional coordinate system that goes from 0 to 100. I would choose how long it takes to go from 0 to 100. With that information, it would be possible to calculate the latest drop-off time depending on what the earliest pick-up time is. 
+First, I have to add fake data with [Faker.js](https://github.com/marak/Faker.js/) to get generate data and [Elasticsearch](https://github.com/elastic/elasticsearch-js) to search the fake data. Second, I create a new endpoint `/schedule`. I would look for cars that have the required features. If no cars were found, I would send a response with that information. Second I would check for the desired pick-up and drop-off location are correct. I chose a simple 1-dimensional coordinate system that goes from 0 to 100. I would choose how long it takes to go from 0 to 100. With that information, it would be possible to calculate the latest drop-off time depending on what the earliest pick-up time is. To handle the manipulation of dates, I would use [Moment.js](https://momentjs.com/). The current implementation only converts timestamps to strings which is not ideal.
 
 Finally I would add tests with the two following strategies. 
 
-# TASK 4: MANAGEMENT AND SCHEDULE SERVICE TESTING
-
-
+# Task 4: management and schedule service testing
 
 ## [Lab](https://github.com/hapijs/lab)
 
@@ -52,12 +48,11 @@ To test this `hapi.js` I would do unit testing with Lab. I would  write a test p
 npm run test:coverage
 ``` 
 
-
 ## Postman
 
 *Postman export is included in `/postman`. To import it follow [this link](https://www.getpostman.com/docs/v6/postman/collections/data_formats#exporting-and-importing-postman-data).*
 
-I used Postman to test the consistency of the API. I did some very simple test. This command
+I use Postman to test the consistency of the API. I did some very simple test. This command
 
 ```bash
 npm run test:postman
