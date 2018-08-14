@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon --inspect src/ --exec node",
     "test": "lab",
+    "test:watch": "nodemon -w test --exec 'lab || true'",
     "test:postman": "newman run docs/reply-demo.postman_collection.json --globals docs/reply-demo.postman_globals.json"
   },
   "keywords": [],
