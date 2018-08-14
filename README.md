@@ -35,7 +35,7 @@ To create this API, I used `hapi.js`. This framework is perfect to create APIs (
 └── utils.js
 ```
 
-To ease development, the db is held in memory and has two item for each entity. Every route has three files: `config`, `index` and `schema`. The schema file contains information to validate the schema (payload and params) with [Joi](https://github.com/hapijs/joi). A [`failAction`](https://hapijs.com/tutorials/validation#user-content-responsefailaction) handler should be implement for every route that needs it because it helps the API users in case of a payload/params error. 
+To ease development, the db is held in memory and has two item for each entity. Every route has three files: `config`, `index` and `schema`. The schema file contains information to validate the schema (payload and params) with [Joi](https://github.com/hapijs/joi). A [`failAction`](https://hapijs.com/tutorials/validation#user-content-responsefailaction) handler should be implemented for every route that needs it, because it helps the API users in case of a payload/params error. 
 
 Every handler has 6 files:
 
@@ -52,7 +52,7 @@ Every handler has 6 files:
 
 EntityName represents one of the following: `user`, `demand` and `car`. 
 
-Except for `index.js`, they all correspond to method: 
+Except for `index.js`, they all correspond to a method: 
 
 * `get-collection`: `READ` a collection of all the items
 * `get-resource`: `READ` one specific resource
@@ -80,7 +80,7 @@ I added a swagger documentation of all the accessible endpoints. Here is [the li
 
 # Task 3: Schedule service design and implementation
 
-I didn't have time to fully design and implement the schedule service, so I'll explain  how I would have completed this task. 
+I didn't have time to fully design and implement the schedule service, so I'll explain how I would have completed this task. 
 
 First, I would add fake data with [Faker.js](https://github.com/marak/Faker.js/) to generate data and [Elasticsearch](https://github.com/elastic/elasticsearch-js) to search the fake data. Second, I create a new endpoint `/schedule`. I look for cars that have the required features. If no cars were found, I send a response with that information. Second, I check if the desired pick-up and drop-off location are correct. I choose a simple 1-dimensional coordinate system that goes from 0 to 100. I choose how long it takes to go from 0 to 100. With that information, it would be possible to calculate the latest drop-off time depending on what the earliest pick-up time is. To handle the manipulation of dates, I would use [Moment.js](https://momentjs.com/). The current implementation only converts timestamps to strings which is not ideal. 
 
@@ -201,8 +201,8 @@ Testing with Postman makes it easy for your user to see working examples. It's a
 
 ## Continuous integration
 
-Lab unit tests and Postman/Newman tests should be added in the pipeline of the continuous integration. It shouldn't be possible  to have the API online with one of this test failing. 
+Lab unit tests and Postman/Newman tests should be added in the pipeline of the continuous integration. It won't be possible to update the API if one of the tests fails. 
 
 # Conclusion
 
-Doing this demo was very fun. The IoT topic is wide and many things has to be done. Hapi is a very nice framework to work with and the ecosystem around it produce everything you need. I also enjoyed using Postman/Newman as a testing tool. They made it easy to version and test APIs. I would a liked to implement the schedule service. If I have more time I would add a real database like Postgres, Redis (PubSub for demands and caching) and a regression testing CI pipeline. 
+Doing this demo was very fun. The IoT topic is wide and I'd like to work more with it. Hapi is a very nice framework to work with and the ecosystem around it produces everything you need. I also enjoyed using Postman/Newman as a testing tool. They made it easy to version and test APIs. I would have liked to implement the schedule service. Some things that could be added to this project is a real database like Postgres and/or Redis (PubSub for demands and caching), as well as a regression testing CI pipeline. 
